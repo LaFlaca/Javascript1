@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Tiempo diario</title>
+  <script src="horas.js"></script>
+</head>
+  <body>
+    <p id="tiempo"></p>
+    <p id="imagen"></p>
+    <p id="hora"></p>
+    <p id="inicio"></p>
+    <script>
+    var d=new Date();
+    var n=d.getHours();
+    document.getElementById("tiempo").innerHTML = d;
+    var elem = document.createElement("img");
+    document.getElementById("imagen").appendChild(elem);
+    document.getElementById("inicio").innerHTML = "Bienvenido";
+
+    if(n>=5 && n<=12){
+
+      elem.src = "manana.jpg";
+      document.getElementById("hora").innerHTML = "Mañana";
+    }else if(n>12 && n<=7){
+      elem.src = "tarde.jpg";
+      document.getElementById("hora").innerHTML = "Tarde";
+    }else if (n>17 && n<=21) {
+      elem.src = "noche.jpg";
+      document.getElementById("hora").innerHTML = "Noche";
+    }else{
+      elem.src = "madrugada.jpg";
+      document.getElementById("hora").innerHTML = "Madrugada";
+    }</script>
+
+    <p><a href="horarios.html">Tarea 2:Horarios</a></p>
+  
+  </body>
+</html>
